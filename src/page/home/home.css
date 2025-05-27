@@ -1,0 +1,76 @@
+:root {
+  --main_color: #0090f0;
+  --p_color: #7b7b7b;
+  --bg_color: #f3f3f3;
+  --white_color: #ffffff;
+  --color_heading: #253237;
+  --border_color: #d6d6d6;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ***************************************************** */
+.hero-slider {
+  position: relative;
+  padding-top: 20px;
+}
+.swiper-slide .content{
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  text-align: left;
+}
+.swiper-slide .content h4{
+  text-transform: uppercase;
+  font-size: 1vw;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.swiper-slide .content h3{
+  text-transform: capitalize;
+  font-size: 3vw;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  line-height: 1.1;
+  color: var(--main_color);
+}
+.swiper-slide .content p{
+  font-size: 1.1vw;
+  color: var(--p_color);
+}
+.swiper-slide .content a{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 2rem 0;
+  background-color: var(--main_color);
+  color: var(--white_color);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.swiper-slide .content a:hover{
+  background-color: transparent;
+  color: var(--main_color);
+}

@@ -1,0 +1,187 @@
+:root {
+  --main_color: #0090f0;
+  --p_color: #7b7b7b;
+  --bg_color: #f3f3f3;
+  --white_color: #ffffff;
+  --color_heading: #253237;
+  --border_color: #d6d6d6;
+}
+
+.top-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.top-header .logo {
+  width: 160px;
+}
+
+.top-header .search-box {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg_color);
+  border: 1px solid var(--main_color);
+  border-radius: 30px;
+}
+
+.top-header .search-box input {
+  width: 440px;
+  height: 40px;
+  padding: 5px 15px 5px 20px;
+  border-radius: 30px 0 0 30px;
+}
+
+.top-header .search-box button {
+  background-color: var(--main_color);
+  width: 60px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+}
+.top-header .search-box button:hover {
+  background-color: #0090f0d3;
+}
+
+.top-header .search-box button svg {
+  fill: var(--white_color);
+}
+
+.top-header .header-icons {
+  display: flex;
+  gap: 30px;
+}
+
+.top-header .header-icons .icon {
+  position: relative;
+  cursor: pointer;
+}
+.top-header .header-icons .icon svg {
+  font-size: 30px;
+}
+.top-header .header-icons .icon .count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: var(--main_color);
+  color: var(--white_color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+}
+
+/* bottom header ***************************************** */
+.bottom-header {
+  background-color: var(--main_color);
+}
+.bottom-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottom-header .container .nav {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  height: 50px;
+}
+.bottom-header .container .nav .category-nav {
+  width: 220px;
+  height: 100%;
+  position: relative;
+}
+.bottom-header .container .nav .category-nav .category-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+  line-height: 48px;
+  user-select: none;
+}
+.bottom-header .container .nav .category-nav .category-btn svg {
+  fill: var(--white_color);
+}
+.bottom-header .container .nav .category-nav .category-btn p {
+  color: var(--white_color);
+  font-size: 15;
+  font-weight: 600;
+}
+.bottom-header .container .nav .category-nav .category-nav-list {
+  position: absolute;
+  top: 100%;
+  background-color: var(--white_color);
+  display: block;
+  width: 100%;
+  border: 1px solid var(--color_heading);
+  border-top: 0;
+  padding: 7px;
+  max-height: 400px;
+  overflow-y: auto;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  z-index: 10;
+  transition: clip-path 0.2s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.bottom-header .container .nav .category-nav .category-nav-list.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 1;
+}
+.bottom-header
+  .container
+  .nav
+  .category-nav
+  .category-nav-list
+  a:not(:last-child),
+.bottom-header .container .nav .category-nav .category-nav-list a:last-child {
+  display: block;
+  padding: 7px 5px;
+  margin: 3px 0;
+  border-bottom: 1px solid var(--color_heading);
+  transition: background 0.2s;
+}
+.bottom-header .container .nav .category-nav .category-nav-list a:last-child {
+  border-bottom: 0;
+  margin: 0;
+}
+.bottom-header .container .nav .category-nav .category-nav-list a:hover {
+  background-color: #25323755;
+}
+
+.bottom-header .container .nav .nav-links {
+  display: flex;
+  height: 100%;
+}
+.bottom-header .container .nav .nav-links li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  cursor: pointer;
+}
+.bottom-header .container .nav .nav-links li:hover {
+  background-color: #2532374f;
+}
+.bottom-header .container .nav .nav-links li.active {
+  background-color: #2532374f;
+}
+.bottom-header .container .nav .nav-links li a {
+  color: var(--white_color);
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 48px;
+}
+.bottom-header .container .sign-rigs-icon {
+  display: flex;
+  gap: 20px;
+}
+.bottom-header .container .sign-rigs-icon svg {
+  font-size: 22px;
+  fill: var(--white_color);
+  cursor: pointer;
+}
