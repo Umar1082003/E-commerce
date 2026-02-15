@@ -41,3 +41,17 @@ https://umar1082003.github.io/E-commerce/
 
 ## 📸 Screenshots
 
+### 🏠 Home Page
+
+![Home 1](./screenshots/Home1.png)
+![Home 2](./screenshots/Home2.png)
+![Home 3](./screenshots/Home3.png)
+![Home 4](./screenshots/Home4.png)
+
+### 🛒 Cart Page
+
+![Cart Page](./screenshots/CartPage.png)
+
+### ❤️ Favorites Page
+
+![Favorites Page](./screenshots/FavPage.png)
