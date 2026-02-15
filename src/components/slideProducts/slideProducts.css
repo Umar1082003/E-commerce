@@ -1,24 +1,39 @@
-:root {
+/* :root {
   --main_color: #0090f0;
   --p_color: #7b7b7b;
   --bg_color: #f3f3f3;
   --white_color: #ffffff;
   --color_heading: #253237;
   --border_color: #d6d6d6;
+} */
+
+.swiper-slide {
+  background-color: transparent;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: var(--main_color) !important;
 }
 
 .topSlide {
+  width: auto;
   position: relative;
   margin-bottom: 20px;
-  border-bottom: 1px solid var(--border_color);
+  border-bottom: 2px solid var(--border_color);
   padding: 30px 20px 20px 0;
+  background-color: var(--bg_color);
+  margin-top: 16px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
 }
 
 .topSlide::after {
   content: "";
   position: absolute;
+  left: 50%;
   bottom: -1px;
-  width: 100px;
+  transform: translateX(-50%);
+  width: 200px;
   height: 2px;
   background-color: var(--main_color);
 }
@@ -29,12 +44,18 @@
   margin-bottom: 10px;
   text-transform: capitalize;
 }
-.topSlide p {
-  font-size: 14px;
-  color: var(--p_color);
+@media (max-width: 768px) {
+  .topSlide h2 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 426px){
+  .topSlide h2 {
+    font-size: 20px;
+  }
 }
 /* *********************************** */
-.product-container{
+.product-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +64,7 @@
   height: auto;
   padding: 20px;
   background-color: var(--bg_color);
-  border-radius: 13px;
+  border-radius: 18px;
 }
 .product {
   position: relative;
@@ -72,7 +93,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.product:hover img{
+.product:hover img {
   transform: scale(1.05);
 }
 .product h3 {
@@ -117,10 +138,8 @@
   transform: translateY(-50%);
   gap: 10px;
   transition: all 0.4s ease;
-  /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); */
 }
 .product:hover .btns {
-  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
   right: 20px;
 }
 .product .btns .btn {
@@ -139,7 +158,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .product .btns .btn:disabled {
-  background-color: #0090f055;
+  background-color: #d7e8d28e;
   color: var(--main_color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: not-allowed;
@@ -147,13 +166,12 @@
   transition: all 0.3s ease;
 }
 
-
-.in-cart{
+.in-cart {
   border-color: var(--main_color) !important;
   box-shadow: 0 0 2px var(--main_color) !important;
   transition: all 0.3s ease;
 }
-.done-in-cart{
+.done-in-cart {
   position: absolute;
   top: -36px;
   display: flex;
@@ -167,15 +185,77 @@
   padding: 5px 10px;
   text-wrap: nowrap;
 }
-.done-in-cart svg{
+.done-in-cart svg {
   width: 22px;
   height: 22px;
   margin-right: 5px;
 }
-.in-cart .done-in-cart{
+.in-cart .done-in-cart {
   top: 10px;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 14px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.in-fav{
+  background-color: var(--bg_color) !important;
+  border: 1px solid var(--main_color) !important;
+  box-shadow: 0 0 10px var(--main_color), 0 0 10px rgba(0, 0, 0, 0.3) !important; 
+}
+.in-fav svg{
+  color: var(--main_color);
+  /* font-size: larger; */
+  margin-top: 2px;
+}
+@media (max-width: 768px) {
+  .product-container {
+    width: 100%;
+    height: auto;
+    padding: 0px;
+  }
+  .product {
+    height: auto;
+    padding: 20px 15px;
+  }
+  .product .img {
+    width: auto;
+    height: auto;
+    padding: 12px;
+  }
+  .product h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color_heading);
+    margin: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-align: left;
+  }
+  .product p {
+    font-size: 12px;
+  }
+  .product .stars {
+    font-size: 12px;
+  }
+  .product .price {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .product:hover .btns {
+    right: 10px;
+  }
+  .product .btns .btn {
+    padding: 5px;
+  }
+  .done-in-cart svg {
+    width: 20px;
+    height: 20px;
+  }
+  .in-cart .done-in-cart {
+    padding: 3px 7px;
+    font-size: 11px;
+  }
 }

@@ -74,3 +74,22 @@
   background-color: transparent;
   color: var(--main_color);
 }
+@media(max-width: 426px){
+  .swiper-slide .content h4{
+    font-size: 2vw;
+    margin-bottom: 0.4rem;
+  }
+  .swiper-slide .content h3{
+    font-size: 3vw;
+    margin-bottom: 7px;
+    line-height: 1.1;
+  }
+  .swiper-slide .content p{
+    font-size: 2vw;
+  }
+  .swiper-slide .content a{
+    padding: 0.2rem 0.5rem;
+    margin: 0.6rem 0;
+    font-size: 10px;
+  }
+}

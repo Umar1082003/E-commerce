@@ -4,7 +4,7 @@ import PageTransition from "../../components/pageTransition";
 import { CartContext } from "../../components/context/CartContext";
 import toast from "react-hot-toast";
 import { FaStar, FaStarHalfStroke } from "react-icons/fa6";
-import { FaCartPlus, FaHeart, FaShare } from "react-icons/fa";
+import { FaCartPlus, FaHeart } from "react-icons/fa";
 import { MdDone } from "react-icons/md";
 import "./category.css";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ function CategoryPage() {
 
   const [categoryProducts, setCategoryProducts] = useState([]);
 
-  const { cart, addToCart } = useContext(CartContext);
+  const { cart, addToCart, favorites, removeFromFavorites, addToFavorites } = useContext(CartContext);
 
 
   const handleAddToCart = (e, product) => {
@@ -49,14 +49,23 @@ function CategoryPage() {
       <div className="category-products">
         <div className="topSlide">
           <h2>{category}</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-            error suscipit aut dolorem laborum qui.
-          </p>
         </div>
         <div className="productsCategoryPage">
           {categoryProducts.map((product) => {
             const isCartIn = cart.some((i) => i.id === product.id);
+            const isFavIn = favorites.some((i) => i.id === product.id);
+
+            const handleAddToFavorites = (e) => {
+              if (isFavIn) {
+                e.preventDefault();
+                removeFromFavorites(product.id);
+                toast.error(<p>removed from Favorites</p>, { duration: 3500 });
+              } else {
+                e.preventDefault();
+                addToFavorites(product);
+                toast.success(<p>Added To Favorites</p>, { duration: 3500 });
+              }
+            };
 
             return <Link to={`/products/${product.id}`} className="productsCP">
               <div
@@ -87,12 +96,12 @@ function CategoryPage() {
                   >
                     <FaCartPlus />
                   </button>
-                  <button className="btn">
-                    <FaHeart />
-                  </button>
-                  <button className="btn">
-                    <FaShare />
-                  </button>
+                    <button
+                      className={`btn ${isFavIn ? "in-fav" : ""}`}
+                      onClick={(e) => handleAddToFavorites(e)}
+                    >
+                      <FaHeart />
+                    </button>
                 </div>
               </div>
             </Link>

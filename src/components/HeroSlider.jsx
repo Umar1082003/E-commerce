@@ -2,14 +2,18 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/pagination";
 
 import "../page/home/Home.css";
 
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
 import { Link } from "react-router";
+
+import banner1 from "../img/banner_Hero1.jpg";
+import banner2 from "../img/banner_Hero2.jpg";
+import banner3 from "../img/banner_Hero3.jpg";
 
 function HeroSlider() {
   return (
@@ -37,7 +41,7 @@ function HeroSlider() {
                   Shop Now
                 </Link>
               </div>
-              <img src="../../src/img/banner_Hero1.jpg" alt="banner_Hero1" />
+              <img src={banner1} alt="banner_Hero1" />
             </SwiperSlide>
             <SwiperSlide>
               <div className="content">
@@ -50,7 +54,7 @@ function HeroSlider() {
                   Shop Now
                 </Link>
               </div>
-              <img src="../../src/img/banner_Hero2.jpg" alt="banner_Hero2" />
+              <img src={banner2} alt="banner_Hero2" />
             </SwiperSlide>
             <SwiperSlide>
               <div className="content">
@@ -63,7 +67,7 @@ function HeroSlider() {
                   Shop Now
                 </Link>
               </div>
-              <img src="../../src/img/banner_Hero3.jpg" alt="banner_Hero3" />
+              <img src={banner3} alt="banner_Hero3" />
             </SwiperSlide>
           </Swiper>
         </div>

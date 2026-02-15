@@ -1,16 +1,8 @@
-:root {
-  --main_color: #0090f0;
-  --p_color: #7b7b7b;
-  --bg_color: #f3f3f3;
-  --white_color: #ffffff;
-  --color_heading: #253237;
-  --border_color: #d6d6d6;
-}
 
 .cart .cart-container {
   width: 45%;
   height: auto;
-  border: 1px solid var(--border_color);
+  border: 3px solid var(--main_color);
   margin: 50px auto;
   border-radius: 10px;
   background-color: var(--bg_color);
@@ -78,10 +70,10 @@
   user-select: none;
 }
 .cart .cart-container .cart-item .item-details .quantity-controls button:hover {
-  background-color: #0090f0a2;
+  background-color: var(--hover);
 }
 .cart .cart-container .cart-item .item-details .quantity-controls button:disabled {
-  background-color: #0090f070;
+  background-color: #00f07069;
 }
 .cart .cart-container .cart-item .item-details .quantity-controls .quantity{
   margin: 0 10px;
@@ -113,3 +105,65 @@
 .cart .cart-container .total-summary span{
   color: var(--main_color);
 }
+/* media */
+@media (max-width: 768px){
+  .cart .cart-container h2{
+    padding: 10px 0;
+    font-size: 1.6rem;
+  }
+  .cart .cart-container {
+    width: 75%;
+  }
+}
+@media (max-width: 426px){
+  .cart .cart-container h2{
+    padding: 10px 0;
+    font-size: 1.6rem;
+  }
+  .cart .cart-container {
+    width: 80%;
+  }
+  .cart .cart-items .emptyCart{
+    text-align: center;
+    padding: 20px;
+    color: var(--p_color);
+    font-size: 1.2rem;
+  }
+  .cart .cart-container .cart-item .img{
+    max-width: 100px;
+    max-height: 100px;
+  }
+  .cart .cart-container .cart-item img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+  .cart .cart-container .cart-item .item-details{
+    max-width: 400px;
+    min-width: 150px;
+  }
+  .cart .cart-container .cart-item .item-details h3 {
+    margin: 5px 0;
+    font-size: 0.8rem;
+    color: var(--color_heading);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  .cart .cart-container .cart-item .item-details p {
+    font-size: 0.8rem;
+  }
+  .cart .cart-container .cart-item .item-details .quantity-controls button{
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+  .cart .cart-container .cart-item .item-details .quantity-controls .quantity{
+    font-size: 0.8rem;
+  }
+  .cart .cart-container .total-summary h3{
+    font-size: 15px;
+  }
+}
+/* media */

@@ -3,13 +3,33 @@ import React, { createContext, useEffect, useState } from "react";
 export const CartContext = createContext();
 
 export default function CartProvider({ children }) {
+  const [favorites, setFavorites] = useState(() => {
+    const favData = localStorage.getItem("favorites");
+    return favData ? JSON.parse(favData) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+
+  const addToFavorites = (product) => {
+    setFavorites((prev) => {
+      if (prev.some((i) => i.id === product.id)) {
+        return prev
+      }
+      return [...prev, product]
+    })
+  }
+
+  const removeFromFavorites = (id) => {
+    setFavorites((prev) => prev.filter((i) => i.id !== id))
+  }
   // Initialize cart state from localStorage or set to an empty array
   // This state will hold the cart items
   const [cart, setCarts] = useState(() => {
     const cartData = localStorage.getItem("cart");
     return cartData ? JSON.parse(cartData) : [];
   });
-  console.log("CartProvider", cart);
 
   // decreaseQuantity
   const decreaseQuantity = (id) => {
@@ -47,6 +67,9 @@ export default function CartProvider({ children }) {
         decreaseQuantity,
         increaseQuantity,
         removeItem,
+        addToFavorites,
+        favorites,
+        removeFromFavorites,
       }}
     >
       {children}

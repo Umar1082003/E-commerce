@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
 import { FaStar, FaStarHalfStroke } from "react-icons/fa6";
-import { FaCartPlus, FaHeart, FaShare } from "react-icons/fa";
+import { FaCartPlus, FaHeart } from "react-icons/fa";
 import { MdDone } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { toast } from "react-hot-toast";
 
+
 function Products({ data }) {
-  const { cart, addToCart } = useContext(CartContext);
+  const { cart, addToCart, favorites, addToFavorites, removeFromFavorites } = useContext(CartContext);
 
   const isCartIn = cart.some((i) => i.id === data.id);
+  const isFavIn = favorites.some((i) => i.id === data.id);
 
   const navigate = useNavigate();
 
@@ -22,11 +24,23 @@ function Products({ data }) {
         <div className="toast-content">
           <strong>{data.title}</strong>
           <p>price: ${data.price}</p>
-          <button onClick={() => navigate("./cart")}>View Cart</button>
+          <button onClick={() => navigate("../cart")}>View Cart</button>
         </div>
       </div>,
       { duration: 5500 }
     );
+  };
+
+  const handleAddToFavorites = (e) => {
+    if (isFavIn) {
+      e.preventDefault();
+      removeFromFavorites(data.id);
+      toast.error(<p>removed from Favorites</p>, { duration: 3500 });
+    }else{
+      e.preventDefault();
+      addToFavorites(data);
+      toast.success(<p>Added To Favorites</p>, { duration: 3500 });
+    }
   };
 
   return (
@@ -58,11 +72,11 @@ function Products({ data }) {
             >
               <FaCartPlus />
             </button>
-            <button className="btn">
+            <button
+              className={`btn ${isFavIn ? "in-fav" : ""}`}
+              onClick={(e) => handleAddToFavorites(e)}
+            >
               <FaHeart />
-            </button>
-            <button className="btn">
-              <FaShare />
             </button>
           </div>
         </div>

@@ -14,7 +14,7 @@ const navLinks = [
 
 function BottomHeader() {
   const location = useLocation();
-  
+
   const [categories, setCategories] = useState([]);
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
 
@@ -26,20 +26,21 @@ function BottomHeader() {
 
   useEffect(() => {
     setIsCategoryOpen(false);
-  }, [location.pathname])
+  }, [location.pathname]);
 
   return (
     <div className="bottom-header">
       <div className="container">
+        {/* **NAV** */}
         <div className="nav">
-          {/* ****************************** */}
+          {/* **Categories** */}
           <div className="category-nav">
             <div
               className="category-btn"
               onClick={() => setIsCategoryOpen(!isCategoryOpen)}
             >
               <IoIosMenu />
-              <p>get gategory</p>
+              <p>Gategories</p>
               <IoIosArrowDown />
             </div>
 
@@ -55,9 +56,9 @@ function BottomHeader() {
               ))}
             </div>
           </div>
-          {/* ****************************** */}
+          {/* ///Categories/// */}
 
-          {/* ****************************** */}
+          {/* **Links** */}
           <div className="nav-links">
             {navLinks.map((navLink) => (
               <li
@@ -67,12 +68,43 @@ function BottomHeader() {
               </li>
             ))}
           </div>
-          {/* ****************************** */}
+          {/* ///Links/// */}
         </div>
+        {/* ///NAV/// */}
 
+        {/* **Icons** */}
         <div className="sign-rigs-icon">
           <PiSignInBold />
           <FaUserPlus />
+          <IoIosMenu
+            className="menu-icon"
+            onClick={() =>
+              document.querySelector(".menu").classList.toggle("open")
+            }
+          />
+        </div>
+        {/* ///Icons/// */}
+
+        {/* Menu */}
+        <div className="menu">
+          <IoIosMenu
+            className="menu-icon"
+            onClick={() =>
+              document.querySelector(".menu").classList.toggle("open")
+            }
+          />
+          <div className="menuNav">
+            {navLinks.map((navLink) => (
+              <li
+                className={location.pathname === navLink.link ? "active" : ""}
+                onClick={() => {
+                  document.querySelector(".menu").classList.toggle("open");
+                }}
+              >
+                <Link to={navLink.link}>{navLink.title}</Link>
+              </li>
+            ))}
+          </div>
         </div>
       </div>
     </div>

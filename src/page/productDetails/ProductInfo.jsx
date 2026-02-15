@@ -6,9 +6,10 @@ import toast from "react-hot-toast";
 import { CartContext } from "../../components/context/CartContext";
 
 function ProductInfo({ product }) {
-  const { cart, addToCart } = useContext(CartContext);
+  const { cart, addToCart, favorites, removeFromFavorites, addToFavorites } = useContext(CartContext);
 
   const isCartIn = cart.some((i) => i.id === product.id);
+  const isFavIn = favorites.some((i) => i.id === product.id);
 
   const navigate = useNavigate();
 
@@ -26,6 +27,18 @@ function ProductInfo({ product }) {
       </div>,
       { duration: 5500 }
     );
+  };
+
+  const handleAddToFavorites = (e) => {
+    if (isFavIn) {
+      e.preventDefault();
+      removeFromFavorites(product.id);
+      toast.error(<p>removed from Favorites</p>, { duration: 3500 });
+    } else {
+      e.preventDefault();
+      addToFavorites(product);
+      toast.success(<p>Added To Favorites</p>, { duration: 3500 });
+    }
   };
   return (
     <div className="product-info">
@@ -46,19 +59,26 @@ function ProductInfo({ product }) {
       </p>
       <p className="description">{product.description}</p>
       <h3>
-        {product.stock === 0
-          ? <span className="out-of-stock">{`${product.stock} products we have`}</span>
-          : `harry up! only ${product.stock} products
-        left in stock`}
+        {product.stock === 0 ? (
+          <span className="out-of-stock">{`${product.stock} products we have`}</span>
+        ) : (
+          `harry up! only ${product.stock} products
+        left in stock`
+        )}
       </h3>
       <button
-        className={`btn ${isCartIn ? "in-cart" : ""} ${product.stock === 0 ? "outOfStock" : ""}`}
+        className={`btn ${isCartIn ? "in-cart" : ""} ${
+          product.stock === 0 ? "outOfStock" : ""
+        }`}
         onClick={handleAddToCart}
       >
         {isCartIn ? "Item Already In Cart" : "Add To Card"}
         <FaCartPlus />
       </button>
-      <FaHeart className="heartIcon" />
+      <FaHeart
+        className={`heartIcon ${isFavIn ? "in-fav" : ""}`}
+        onClick={(e) => handleAddToFavorites(e)}
+      />
     </div>
   );
 }

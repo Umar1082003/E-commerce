@@ -14,22 +14,17 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 
 function SlideProducts({ title, data }) {
-  console.log(data);
   
   return (
     <div className="slideProducts slide">
       <div className="container">
         <div className="topSlide">
           <h2>{title}</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-            error suscipit aut dolorem laborum qui.
-          </p>
         </div>
 
         <Swiper
           slidesPerView={5}
-          spaceBetween={30}
+          spaceBetween={20}
           navigation={true}
           modules={[Navigation, Autoplay]}
           autoplay={{
@@ -37,14 +32,29 @@ function SlideProducts({ title, data }) {
             disableOnInteraction: false,
           }}
           className="mySwiper"
+          breakpoints={{
+            320: {
+              slidesPerView: 2,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
         >
-        {data.map((item) => (
-          console.log(item.stock),
-          <SwiperSlide>
-            <Products data={item} />
-          </SwiperSlide>
-        ))}
-
+          {data.map((item, index) => (
+            <SwiperSlide key={index}>
+              <Products data={item} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

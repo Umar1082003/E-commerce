@@ -1,11 +1,11 @@
-:root {
+/* :root {
   --main_color: #0090f0;
   --p_color: #7b7b7b;
   --bg_color: #f3f3f3;
   --white_color: #ffffff;
   --color_heading: #253237;
   --border_color: #d6d6d6;
-}
+} */
 .product-details{
   display: flex;
   justify-content: center;
@@ -91,7 +91,6 @@
   color: var(--white_color);
   padding: 10px 15px;
   margin: 20px 0;
-
   font-size: 16px;
   font-weight: bold;
   border: 1px solid var(--main_color);
@@ -102,7 +101,7 @@
 }
 .product-details .product-info .btn.in-cart,
 .product-details .product-info .btn.outOfStock{
-  background-color: #0090f0a0;
+  background-color: var(--hover);
   pointer-events: none;
   padding: 10px 35px;
   transition: all 0.6s ease;
@@ -119,14 +118,23 @@
   margin: 10px 0;
   padding: 5px;
   border-radius: 50%;
-  background-color: #d4d4d4c2;
-  border: 1px solid #929292;
-  color: white;
+  background-color: #ffffff;
+  border: 1px solid var(--main_color);
+  color: var(--main_color);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .product-details .product-info .heartIcon:hover{
-  background-color: #ffffff;
-  border: 1px solid var(--main_color);
-  color: var(--main_color);
+  box-shadow: 0 0 10px var(--main_color), 0 0 10px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 426px){
+  .product-details{
+flex-direction: column-reverse;
+  }
+  .product-details .product-images{
+    width: 90%;
+  }
+  .product-details .product-info{
+    width: 100%;
+  }
 }

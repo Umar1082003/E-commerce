@@ -1,6 +1,7 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router-dom";
 import BottomHeader from "./components/header/BottomHeader";
 import TopHeader from "./components/header/TopHeader";
+import Footer from "./components/footer/Footer";
 import Home from "./page/home/Home";
 import ProductDetails from "./page/productDetails/ProductDetails";
 import Cart from "./page/cart/Cart";
@@ -8,8 +9,11 @@ import { Toaster } from "react-hot-toast";
 import ScrollTop from "./components/ScrollTop";
 import CategoryPage from "./page/categoryPage/CategoryPage";
 import { AnimatePresence } from "framer-motion";
+import SearchPage from "./page/search page/SearchPage";
+import FavoritesPage from "./page/favorites/FavoritesPage";
 
 function App() {
+  const location = useLocation();
   return (
     <>
       <header>
@@ -33,13 +37,17 @@ function App() {
       />
       <ScrollTop />
       <AnimatePresence mode="wait">
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/category/:category" element={<CategoryPage />} />
         </Routes>
       </AnimatePresence>
+
+      <Footer />
     </>
   );
 }
