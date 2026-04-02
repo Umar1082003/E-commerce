@@ -1,5 +1,3 @@
-import React from "react";
-
 import './SlideProducts.css'
 import Products from './Products'
 
@@ -12,15 +10,14 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Navigation } from "swiper/modules";
+import TopSlide from "./TopSlide";
 
 function SlideProducts({ title, data }) {
   
   return (
     <div className="slideProducts slide">
       <div className="container">
-        <div className="topSlide">
-          <h2>{title}</h2>
-        </div>
+        <TopSlide title={title}/>
 
         <Swiper
           slidesPerView={5}
@@ -34,10 +31,11 @@ function SlideProducts({ title, data }) {
           className="mySwiper"
           breakpoints={{
             320: {
-              slidesPerView: 2,
+              slidesPerView: 1,
             },
             480: {
-              slidesPerView: 2,
+              slidesPerView: 1,
+              spaceBetween: 30,
             },
             768: {
               slidesPerView: 3,

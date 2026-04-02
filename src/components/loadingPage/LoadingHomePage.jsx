@@ -1,4 +1,3 @@
-import React from "react";
 import "./loadingPage.css";
 
 function LoadingHomePage() {
@@ -7,10 +6,9 @@ function LoadingHomePage() {
       <div className="container">
         <div className="topSlide">
           <h2 className="skeltion"></h2>
-          <p className="skeltion"></p>
         </div>
 
-        {[...Array(4)].map((_, i) => (
+        {[...Array(2)].map((_, i) => (
           <div className="parent-products" key={i}>
             <div className="product">
               <div className="img skeltion"></div>

@@ -1,0 +1,59 @@
+.categories .container .show-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  height: 100%;
+  line-height: 20px;
+  padding: 10px;
+  gap: 5px;
+  font-size: 14px;
+  color: var(--main_color);
+  background-color: var(--bg_color);
+  border-radius: 10px;
+  border: 3px solid #b4b4b462;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.categories .container .show-more-btn:hover {
+  border: 3px solid rgba(0, 0, 0, 0.636);
+
+}
+.categories .container .categorys-section {
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.categories .container .categorys-section .category {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: auto;
+  padding: 10px;
+  gap: 5px;
+  font-size: 14px;
+  color: var(--main_color);
+  background-color: var(--bg_color);
+  border-radius: 10px;
+  border: 3px solid #dddfdf;
+}
+.categories .container .categorys-section .category:hover {
+  border: 3px solid var(--hover);
+  transition: all 0.2s ease-in-out;
+}
+.categories .container .categorys-section .category svg {
+  font-size: 20px;
+}
+.categories .container .categorys-section .category p {
+  font-weight: 600;
+  text-decoration: underline var(--main_color);
+}
+.categories .container .categorys-section .category p:hover {
+  color: var(--hover);
+  transition: all 0.2s ease-in-out;
+}

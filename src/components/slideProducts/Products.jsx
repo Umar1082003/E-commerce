@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { FaStar, FaStarHalfStroke } from "react-icons/fa6";
 import { FaCartPlus, FaHeart } from "react-icons/fa";
 import { MdDone } from "react-icons/md";
@@ -51,8 +51,7 @@ function Products({ data }) {
             <MdDone /> in Cart
           </span>
           <div className="img">
-            {/* <img src={data.images[2] || data.images[0]} alt={data.title} /> */}
-            <img src={data.thumbnail} alt={data.title} />
+            <img src={data.thumbnail} alt={data.title} loading="lazy"/>
           </div>
           <h3>{data.title}</h3>
           <p>{data.description}</p>
@@ -63,8 +62,8 @@ function Products({ data }) {
             <FaStar />
             <FaStarHalfStroke />
           </div>
-          <p className="price">${data.price}</p>
           <div className="btns">
+          <p className="price">${data.price}</p>
             <button
               className="btn"
               onClick={(e) => handleAddToCart(e)}

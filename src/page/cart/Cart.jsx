@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { HiTrash } from "react-icons/hi2";
 import "./cart.css";
 import { CartContext } from "../../components/context/CartContext";

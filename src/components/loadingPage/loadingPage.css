@@ -1,3 +1,9 @@
+.categories .topSlide ,
+.slideLoadingPage .topSlide {
+  display: flex;
+  justify-content: center;
+}
+.categories .topSlide h2 ,
 .slideLoadingPage .topSlide h2 {
   width: 150px;
   height: 50px;

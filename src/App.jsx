@@ -1,5 +1,4 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import BottomHeader from "./components/header/BottomHeader";
 import TopHeader from "./components/header/TopHeader";
 import Footer from "./components/footer/Footer";
 import Home from "./page/home/Home";
@@ -11,6 +10,7 @@ import CategoryPage from "./page/categoryPage/CategoryPage";
 import { AnimatePresence } from "framer-motion";
 import SearchPage from "./page/search page/SearchPage";
 import FavoritesPage from "./page/favorites/FavoritesPage";
+import CategoryList from "./components/Categories/Category";
 
 function App() {
   const location = useLocation();
@@ -18,7 +18,6 @@ function App() {
     <>
       <header>
         <TopHeader />
-        <BottomHeader />
       </header>
 
       <Toaster
@@ -39,11 +38,20 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
+
+          <Route path="/categoriesList" element={<CategoryList />} />
+
+          <Route
+            path="/categoriesList/category/:category"
+            element={<CategoryPage />}
+          />
+
+          <Route path="/category/:category" element={<CategoryPage />} />
+
           <Route path="/search" element={<SearchPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:id" element={<ProductDetails />} />
-          <Route path="/category/:category" element={<CategoryPage />} />
         </Routes>
       </AnimatePresence>
 
