@@ -1,9 +1,8 @@
 import SearchBox from "./searchBox/SearchBox";
 
-import "../page/home/Home.css";
-
 import banner1 from "../img/Main-bg.webp";
 
+import "../page/home/Home.css";
 function HeroSlider() {
   return (
     <>

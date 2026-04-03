@@ -1,3 +1,5 @@
+import './slideProducts.css';
+
 function TopSlide({ title }) {
   return (
     <div>
