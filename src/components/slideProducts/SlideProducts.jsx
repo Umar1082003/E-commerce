@@ -1,4 +1,3 @@
-import './SlideProducts.css'
 import Products from './Products'
 
 // Import Swiper React components
@@ -12,6 +11,7 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import TopSlide from "./TopSlide";
 
+import './slideProducts.css'
 function SlideProducts({ title, data }) {
   
   return (

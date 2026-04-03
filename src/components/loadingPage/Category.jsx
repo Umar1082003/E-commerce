@@ -1,4 +1,4 @@
-
+import "./loadingPage.css";
 function Category() {
   return (
     <div className="categories">

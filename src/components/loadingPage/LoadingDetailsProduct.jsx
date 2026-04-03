@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./loadingPage.css";
 
 function LoadingDetailsProduct() {

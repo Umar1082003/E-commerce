@@ -6,7 +6,7 @@ import LoadingCategoryList from "../../components/loadingPage/Category";
 import PageTransition from "../../components/pageTransition";
 import CategoryList from "../../components/Categories/Category";
 
-
+import "./home.css";
 
 const categories = [
   { name: "category" },
