@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
-import "./ProductDetails.css";
 import SlideProducts from "../../components/slideProducts/SlideProducts";
 import LoadingDetailsProduct from "../../components/loadingPage/LoadingDetailsProduct";
 import LoadingHomePage from "../../components/loadingPage/LoadingHomePage";
 import ProductInfo from "./ProductInfo";
 import ProductImages from "./ProductImages";
-import PageTransition from "../../components/pageTransition";
+import PageTransition from "../../components/PageTransition";
 
+import "./productDetails.css";
 function ProductDetails() {
   const { id } = useParams();
   // States

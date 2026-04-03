@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { FaSearch } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router";
+import { FaSearch } from "react-icons/fa";
 
 import "./searchBox.css";
 
@@ -30,7 +30,6 @@ function SearchBox() {
           );
           const data = await res.json();
           setSuggestions(data.products.slice(0, 5) || []);
-          // console.log(data);
         } catch (error) {
           console.log(error);
           setSuggestions([]);

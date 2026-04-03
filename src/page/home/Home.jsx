@@ -3,10 +3,10 @@ import HeroSlider from "../../components/HeroSlider";
 import SlideProducts from "../../components/slideProducts/SlideProducts";
 import LoadingHomePage from "../../components/loadingPage/LoadingHomePage";
 import LoadingCategoryList from "../../components/loadingPage/Category";
-import PageTransition from "../../components/pageTransition";
+import PageTransition from "../../components/PageTransition";
 import CategoryList from "../../components/Categories/Category";
 
-import "./home.css";
+// import "./home.css";
 
 const categories = [
   { name: "category" },

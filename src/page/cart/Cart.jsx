@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { HiTrash } from "react-icons/hi2";
-import "./cart.css";
 import { CartContext } from "../../components/context/CartContext";
-import PageTransition from "../../components/pageTransition";
+import PageTransition from "../../components/PageTransition";
 
 
+import "./cart.css";
 function Cart() {
   const { cart, decreaseQuantity, increaseQuantity, removeItem } = useContext(CartContext);
   

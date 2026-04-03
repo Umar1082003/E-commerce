@@ -8,7 +8,7 @@ import { Toaster } from "react-hot-toast";
 import ScrollTop from "./components/ScrollTop";
 import CategoryPage from "./page/categoryPage/CategoryPage";
 import { AnimatePresence } from "framer-motion";
-import SearchPage from "./page/search page/SearchPage";
+import SearchPage from "./page/searchPage/SearchPage";
 import FavoritesPage from "./page/favorites/FavoritesPage";
 import CategoryList from "./components/Categories/Category";
 
