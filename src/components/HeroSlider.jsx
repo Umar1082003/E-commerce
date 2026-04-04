@@ -2,7 +2,7 @@ import SearchBox from "./searchBox/SearchBox";
 
 import banner1 from "../assets/Main-bg.webp";
 
-import "../page/home/home.css";
+// import "../page/home/home.css";
 function HeroSlider() {
   return (
       <div className="hero-slider">
