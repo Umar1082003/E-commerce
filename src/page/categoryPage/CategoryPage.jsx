@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import PageTransition from "../../components/pageTransition";
+import PageTransition from "../../components/PageTransition";
 import ProductsList from "../../components/slideProducts/ProductsList";
 
 function CategoryPage() {
