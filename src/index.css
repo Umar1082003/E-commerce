@@ -7,9 +7,9 @@
 }
 
 :root {
-  --main_color: #fa824b7c;
-  --hover: #ff7636a0;
-  --disable: #ff8b5635;
+  --main_color: #4bfa4b7c;
+  --hover: #4bfa4b56;
+  --disable: #4bfa4b2c;
   --p_color: #7b7b7b;
   --bg_color: #dfe8e3;
   --white_color: #ffffff;
@@ -18,7 +18,7 @@
 }
 
 body {
-  background: #d7e8d28e;
+  background: #ffffff94;
   font-family: "Inter", sans-serif;
   margin-bottom: 50px;
   padding-top: 100px;
