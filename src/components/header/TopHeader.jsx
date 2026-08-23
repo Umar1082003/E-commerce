@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 import { CiHeart } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
 import { PiSignInBold } from "react-icons/pi";
-import { FaUserPlus } from "react-icons/fa6";
 import { IoIosMenu } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
 
@@ -22,14 +22,13 @@ const navLinks = [
 
 function TopHeader() {
   const { cart, favorites } = useContext(CartContext);
+  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   
   useEffect(() => {
-    const menuNav = document.querySelector(".menuNav");
-    menuNav.classList.remove("open");
+    setIsOpen(false)
   }, [location.pathname]);
-
-
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,13 +57,39 @@ function TopHeader() {
           ))}
         </div>
         {/* ///Links/// */}
+        {/* **Icons** */}
+        <div className="header-icons">
+          <div className="icon">
+            <Link to="/favorites">
+              <CiHeart />
+              <span className="count">{favorites.length}</span>
+            </Link>
+          </div>
+
+          <div className="icon">
+            <Link to="/cart">
+              <FaCartShopping />
+              <span className="count">{cart.length}</span>
+            </Link>
+          </div>
+
+          <div className="sign-rigs-icon">
+            <IoIosMenu
+              className="menu-icon"
+              onClick={() =>
+                document.querySelector(".menuNav").classList.toggle("open")
+              }
+            />
+          </div>
+        </div> 
+        {/* ///Icons/// */}
         {/* menu */}
-        <div className="menuNav">
+        <div className={`menuNav ${isOpen ? "open" : ''}`}>
           <>
             <IoCloseSharp
               className="menu-icon"
               onClick={() =>
-                document.querySelector(".menuNav").classList.toggle("open")
+                setIsOpen(prev => !prev)
               }
             />
             {navLinks.map((navLink) => (
@@ -72,7 +97,7 @@ function TopHeader() {
                 key={navLink.title}
                 className={location.pathname === navLink.link ? "active" : ""}
                 onClick={() => {
-                  document.querySelector(".menuNav").classList.toggle("open");
+                setIsOpen(prev => !prev)
                 }}
               >
                 <Link to={navLink.link}>{navLink.title}</Link>
@@ -95,40 +120,11 @@ function TopHeader() {
 
               <div className="sign-rigs-icon">
                 <PiSignInBold />
-                <FaUserPlus />
               </div>
             </div>
           </>
         </div>
         {/* ///menu/// */}
-        {/* **Icons** */}
-        <div className="header-icons">
-          <div className="icon">
-            <Link to="/favorites">
-              <CiHeart />
-              <span className="count">{favorites.length}</span>
-            </Link>
-          </div>
-
-          <div className="icon">
-            <Link to="/cart">
-              <FaCartShopping />
-              <span className="count">{cart.length}</span>
-            </Link>
-          </div>
-
-          <div className="sign-rigs-icon">
-            <PiSignInBold />
-            <FaUserPlus />
-            <IoIosMenu
-              className="menu-icon"
-              onClick={() =>
-                document.querySelector(".menuNav").classList.toggle("open")
-              }
-            />
-          </div>
-        </div>
-        {/* ///Icons/// */}
       </div>
     </div>
   );

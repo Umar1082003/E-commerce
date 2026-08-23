@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import PageTransition from "../../components/pageTransition";
+import PageTransition from "../../components/PageTransition";
 import { CartContext } from "../../components/context/CartContext";
 import ProductsList from "../../components/slideProducts/ProductsList";
 

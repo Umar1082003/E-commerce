@@ -42,14 +42,6 @@ function CategoryList() {
               </div>
             </Link>
           ))}
-          {/* {location.pathname === "categoriesList" && (
-            <Link to={`category/${category.slug}`} key={category.name}>
-              <div className="category">
-                {categoryIcons[category.slug] || <FaBox />}
-                <h3>{category.name}</h3>
-              </div>
-            </Link>
-          )} */}
           {categories.length > 6 && (
             <div>
               <button
