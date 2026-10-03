@@ -55,7 +55,9 @@ function CategoryList() {
               </div>
             </Link>
           ))}
-          {visibleCategories.length === 6 && (
+          
+          {categories.length > 6 && visibleCategories.length === 6 && (
+            <div>
               <button
                 className="show-more-btn"
                 onClick={() => setShowAll(true)}
@@ -63,8 +65,9 @@ function CategoryList() {
                 <FaPlus />
                 Show More
               </button>
+             </div>
           )}
-        </div>
+       
       </div>
     </div>
   );
