@@ -45,23 +45,26 @@ function Products({ data }) {
 
   return (
     <div className="product-container">
-      <Link to={`/products/${data.id}`} className="products">
+      <div className="products">
         <div className={`product ${isCartIn ? "in-cart" : ""}`}>
-          <span className="done-in-cart">
-            <MdDone /> in Cart
-          </span>
-          <div className="img">
-            <img src={data.thumbnail} alt={data.title} loading="lazy"/>
-          </div>
-          <h3>{data.title}</h3>
-          <p>{data.description}</p>
-          <div className="stars">
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStarHalfStroke />
-          </div>
+          {/* ********* */}
+          <Link to={`/products/${data.id}`} >
+            <span className="done-in-cart">
+              <MdDone /> in Cart
+            </span>
+            <div className="img">
+              <img src={data.thumbnail} alt={data.title} loading="lazy"/>
+            </div>
+            <h3>{data.title}</h3>
+            <p>{data.description}</p>
+            <div className="stars">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStarHalfStroke />
+            </div>
+          </Link>
           <div className="btns">
           <p className="price">${data.price}</p>
             <button
@@ -79,7 +82,7 @@ function Products({ data }) {
             </button>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }
