@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-
 import TopSlide from "../slideProducts/TopSlide";
-import LoadingCategoryList from "../loadingPage/Category";
-import { categoryIcons } from "./CategoryIcons"; 
+import LoadingCategoryList from "../loadingPage/LoadingCategory";
+import { categoryIcons } from "./CategoryIcons";
 
 import { FaBox, FaPlus } from "react-icons/fa";
 
@@ -19,20 +18,18 @@ function CategoryList() {
 
   const visibleCategories = showAll ? categories : categories.slice(0, 6);
 
-
   useEffect(() => {
     fetch("https://dummyjson.com/products/categories")
       .then((res) => {
-      if(!res.ok){
-        throw new Error("Failed to fetch categories")
-      }
-      return res.json()
-    })
+        if (!res.ok) {
+          throw new Error("Failed to fetch categories");
+        }
+        return res.json();
+      })
       .then((data) => setCategories(data))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false))
+      .finally(() => setLoading(false));
   }, []);
-
 
   useEffect(() => {
     if (location.pathname === "/categoriesList") {
@@ -46,16 +43,19 @@ function CategoryList() {
         <TopSlide title="Categories" />
 
         <div className="categorys-section">
+          {loading ? (
+            <LoadingCategoryList />
+          ) : (
+            visibleCategories.map((category) => (
+              <Link to={`/${category.slug}`} key={category.name}>
+                <div className="category">
+                  {categoryIcons[category.slug] || <FaBox />}
+                  <h3>{category.name}</h3>
+                </div>
+              </Link>
+            ))
+          )}
 
-          {loading ? <LoadingCategoryList /> : visibleCategories.map((category) => (
-            <Link to={`/category/${category.slug}`} key={category.name}>
-              <div className="category">
-                {categoryIcons[category.slug] || <FaBox />}
-                <h3>{category.name}</h3>
-              </div>
-            </Link>
-          ))}
-          
           {categories.length > 6 && visibleCategories.length === 6 && (
             <div>
               <button
@@ -65,9 +65,9 @@ function CategoryList() {
                 <FaPlus />
                 Show More
               </button>
-             </div>
+            </div>
           )}
-       
+        </div>
       </div>
     </div>
   );

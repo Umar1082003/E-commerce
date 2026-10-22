@@ -1,21 +1,19 @@
-import SearchBox from "./searchBox/SearchBox";
-
-import banner1 from "../assets/Main-bg.webp";
+import banner1 from "../assets/Modern Ecommerce Product Showcase.png";
+// import banner1 from "../assets/HT.png";
 
 // import "../page/home/home.css";
 function HeroSlider() {
   return (
       <div className="hero-slider">
-        <div className="container">
-            <div className="content">
+        {/* <div className="container"> */}
+            {/* <div className="content">
               <h3>
                 Shop anytime, <br /> anywhere
               </h3>
               <p>Shopping With Us</p>
-              <SearchBox />
-            </div>
-            <img className="hero-banner" src={banner1} alt="banner_Hero1" loading="lazy" />
-        </div>
+            </div> */}
+            <img className="hero-banner" src={banner1} alt="ecommerce_Hero" loading="lazy" />
+        {/* </div> */}
       </div>
   );
 }

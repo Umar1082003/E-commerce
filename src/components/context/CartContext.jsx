@@ -52,6 +52,10 @@ export default function CartProvider({ children }) {
   const removeItem = (id) => {
     setCarts((prev) => prev.filter((item) => item.id !== id));
   };
+  // This function removes an item from the favPage
+  const removeFavItem = (id) => {
+    setFavorites((prev) => prev.filter((item) => item.id !== id));
+  };
   // clearFavorites
   const clearFavorites = () => {
     localStorage.removeItem("favorites");
@@ -78,6 +82,7 @@ export default function CartProvider({ children }) {
         removeItem,
         addToFavorites,
         favorites,
+        removeFavItem,
         clearFavorites,
         removeFromFavorites,
       }}

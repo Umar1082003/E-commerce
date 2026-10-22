@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import HeroSlider from "../../components/HeroSlider";
 import SlideProducts from "../../components/slideProducts/SlideProducts";
 import LoadingHomePage from "../../components/loadingPage/LoadingHomePage";
-import LoadingCategoryList from "../../components/loadingPage/Category";
+import LoadingCategoryList from "../../components/loadingPage/LoadingCategory";
 import PageTransition from "../../components/PageTransition";
 import CategoryList from "../../components/Categories/Category";
 
@@ -10,11 +10,10 @@ import "./home.css";
 
 const categories = [
   { name: "category" },
-  { name: "smartphones" },
   { name: "laptops" },
-  { name: "tablets" },
-  { name: "sunglasses" },
   { name: "mobile-accessories" },
+  { name: "mens-watches" },
+  { name: "womens-bags" },
   { name: "sports-accessories" },
 ];
 

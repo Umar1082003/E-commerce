@@ -1,6 +1,6 @@
 .footer {
-  background: #111;
-  color: #ccc;
+  background: var(--main_color);
+  color: var(--muted);
   padding: 40px 20px;
   margin-top: 40px;
 }
@@ -19,7 +19,7 @@
 }
 
 .footer-col h3 {
-  color: #fff;
+  color: var(--white_color);
   margin-bottom: 10px;
   font-size: 14px;
 }
@@ -36,12 +36,12 @@
 }
 
 .footer-col li:hover {
-  color: #fff;
+  color: var(--white_color);
 }
 
 .small-text {
   font-size: 11px;
-  color: #888;
+  color: var(--white_color);
 }
 
 /* Bottom */
@@ -57,7 +57,7 @@
 
 .social h3,
 .subscribe h3 {
-  color: #fff;
+  color: var(--white_color);
   font-size: 14px;
   margin-bottom: 10px;
 }
@@ -68,7 +68,7 @@
 }
 
 .icons span {
-  background: #222;
+  background: var(--white_color);
   padding: 8px;
   border-radius: 4px;
   cursor: pointer;
@@ -76,7 +76,7 @@
 }
 
 .icons span:hover {
-  background: #444;
+  background: var(--border_color);
 }
 
 /* Subscribe */

@@ -11,6 +11,7 @@ import { AnimatePresence } from "framer-motion";
 import SearchPage from "./page/searchPage/SearchPage";
 import FavoritesPage from "./page/favorites/FavoritesPage";
 import CategoryList from "./components/Categories/Category";
+import NotFound from "./components/notFound/NotFound";
 
 function App() {
   const location = useLocation();
@@ -41,17 +42,15 @@ function App() {
 
           <Route path="/categoriesList" element={<CategoryList />} />
 
-          <Route
-            path="/categoriesList/category/:category"
-            element={<CategoryPage />}
-          />
-
-          <Route path="/category/:category" element={<CategoryPage />} />
+          <Route path="/:category" element={<CategoryPage />} />
 
           <Route path="/search" element={<SearchPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/Accessories" element={<NotFound />} />
+          <Route path="/about" element={<NotFound />} />
+          <Route path="/contact" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
 

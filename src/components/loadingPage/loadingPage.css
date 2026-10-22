@@ -1,7 +1,7 @@
 .categories .topSlide ,
 .slideLoadingPage .topSlide {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 }
 .categories .topSlide h2 ,
 .slideLoadingPage .topSlide h2 {

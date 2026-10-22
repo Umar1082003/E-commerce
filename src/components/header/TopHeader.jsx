@@ -10,13 +10,14 @@ import { IoCloseSharp } from "react-icons/io5";
 import { CartContext } from "../context/CartContext";
 
 import "./Header.css";
+import SearchBox from "../searchBox/SearchBox";
 
 const navLinks = [
   { title: "Home", link: "/" },
   { title: "Categories", link: "/categoriesList" },
   { title: "Accessories", link: "/accessories" },
   { title: "About", link: "/about" },
-  { title: "Content", link: "/content" },
+  { title: "Contact", link: "/contact" },
 ];
 
 
@@ -32,7 +33,7 @@ function TopHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // لو نزل أكتر من 50px
+      setScrolled(window.scrollY > 500); // لو نزل أكتر من 50px
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -43,7 +44,7 @@ function TopHeader() {
     <div className={`top-header ${scrolled ? "scrolled" : ""}`}>
       <div className="container">
         <Link className="logo" to="/">
-          <h1 className="logoHeader">E-Shop</h1>
+          <h1 className="logoHeader">Nexora</h1>
         </Link>
         {/* **Links** */}
         <div className="nav-links">
@@ -52,37 +53,14 @@ function TopHeader() {
               key={navLink.title}
               className={location.pathname === navLink.link ? "active" : ""}
             >
+              <div style={{display: "flex", flexDirection: "column"}}>
+
               <Link to={navLink.link}>{navLink.title}</Link>
+              <span className="borderA"></span>
+              </div>
             </li>
           ))}
         </div>
-        {/* ///Links/// */}
-        {/* **Icons** */}
-        <div className="header-icons">
-          <div className="icon">
-            <Link to="/favorites">
-              <CiHeart />
-              <span className="count">{favorites.length}</span>
-            </Link>
-          </div>
-
-          <div className="icon">
-            <Link to="/cart">
-              <FaCartShopping />
-              <span className="count">{cart.length}</span>
-            </Link>
-          </div>
-
-          <div className="sign-rigs-icon">
-            <IoIosMenu
-              className="menu-icon"
-              onClick={() =>
-                document.querySelector(".menuNav").classList.toggle("open")
-              }
-            />
-          </div>
-        </div> 
-        {/* ///Icons/// */}
         {/* menu */}
         <div className={`menuNav ${isOpen ? "open" : ''}`}>
           <>
@@ -110,21 +88,46 @@ function TopHeader() {
                   <span className="count">{favorites.length}</span>
                 </Link>
               </div>
-
               <div className="icon">
                 <Link to="/cart">
                   <FaCartShopping />
                   <span className="count">{cart.length}</span>
                 </Link>
               </div>
-
-              <div className="sign-rigs-icon">
-                <PiSignInBold />
-              </div>
             </div>
           </>
         </div>
-        {/* ///menu/// */}
+        {/* search */}
+        <div>
+          <SearchBox />
+        </div>
+        
+        {/* **Icons** */}
+        <div className="header-icons">
+          <div className="icon">
+            <Link to="/favorites">
+              <CiHeart />
+              <span className="count">{favorites.length}</span>
+            </Link>
+          </div>
+
+          <div className="icon">
+            <Link to="/cart">
+              <FaCartShopping />
+              <span className="count">{cart.length}</span>
+            </Link>
+          </div>
+
+          <div className="sign-rigs-icon">
+            <IoIosMenu
+              className="menu-icon"
+              onClick={() =>
+                document.querySelector(".menuNav").classList.toggle("open")
+              }
+            />
+          </div>
+        </div> 
+
       </div>
     </div>
   );

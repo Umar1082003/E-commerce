@@ -1,4 +1,5 @@
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLongArrowAltRight } from "react-icons/fa";
+
 import "./footer.css";
 const Footer = () => {
   return (
@@ -69,7 +70,7 @@ const Footer = () => {
             <h3>SUBSCRIBE</h3>
             <div className="input-box">
               <input type="email" placeholder="Email Address" />
-              <button>→</button>
+              <button><FaLongArrowAltRight size={11}/></button>
             </div>
           </div>
         </div>

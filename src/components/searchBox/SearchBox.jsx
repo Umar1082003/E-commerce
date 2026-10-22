@@ -58,7 +58,7 @@ function SearchBox() {
           type="text"
           name="search"
           id="search"
-          placeholder="Search"
+          placeholder="Search For Product"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           autoComplete="off"

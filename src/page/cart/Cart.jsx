@@ -20,7 +20,7 @@ function Cart() {
               <p className="emptyCart">Your Shopping Cart Is Empty!</p>
             ) : (
               cart.map((item, index) => (
-                <div className="cart-item">
+                <div key={index} className="cart-item">
                   <div className="img">
                     <img src={item.images[0]} key={index} />
                   </div>
