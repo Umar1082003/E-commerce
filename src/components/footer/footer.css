@@ -10,7 +10,6 @@
   margin: auto;
 }
 
-/* Top */
 .footer-top {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -44,7 +43,6 @@
   color: var(--white_color);
 }
 
-/* Bottom */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -79,7 +77,6 @@
   background: var(--border_color);
 }
 
-/* Subscribe */
 .input-box {
   display: flex;
 }
@@ -104,7 +101,6 @@
   background: #555;
 }
 
-/* Copy */
 .copyright {
   text-align: center;
   font-size: 12px;
@@ -112,7 +108,6 @@
   margin-top: 20px;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
   .footer-top {
     grid-template-columns: repeat(3, 1fr);

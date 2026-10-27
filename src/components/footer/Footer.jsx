@@ -1,11 +1,10 @@
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLongArrowAltRight } from "react-icons/fa";
 
 import "./footer.css";
-const Footer = () => {
+function Footer() {
   return (
-    <footer className="footer">
+    <div className="footer">
       <div className="footer-container">
-        {/* Top */}
         <div className="footer-top">
           <div className="footer-col">
             <h3>SHOP</h3>
@@ -54,7 +53,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="footer-bottom">
           <div className="social">
             <h3>FOLLOW</h3>
@@ -77,7 +75,7 @@ const Footer = () => {
 
         <p className="copyright">© 2026 E-Shop. All rights reserved.</p>
       </div>
-    </footer>
+    </div>
   );
 };
 
