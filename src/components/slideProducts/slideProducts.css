@@ -258,7 +258,7 @@ background-color: #e1e1e174;
   }
   .product {
     height: auto;
-    padding: 20px 15px;
+    /* padding: 20px 15px; */
   }
   .product .img {
     width: auto;

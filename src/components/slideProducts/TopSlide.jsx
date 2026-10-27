@@ -21,7 +21,7 @@ function TopSlide({ title, query }) {
             ) : (
               <div>
                 <a href={`/E-commerce/${title}`} className="vap">
-                  View all Products
+                  View all
                 </a>
                 <FaLongArrowAltRight size={10} fill="#B9DFA4" />
               </div>
