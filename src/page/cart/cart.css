@@ -14,7 +14,7 @@
   color: var(--main_color);
   font-size: 2rem;
   font-weight: bold;
-  border-bottom: 1px solid var(--border_color);
+  /* border-bottom: 1px solid var(--border_color); */
 }
 .cart .cart-container .cart-item {
   display: flex;
@@ -79,6 +79,10 @@
   font-size: 1rem;
   color: var(--color_heading);
   font-weight: bold;
+}
+.removeAll button{
+  color: red;
+  cursor: pointer;
 }
 .cart .cart-container .cart-item .remove-btn{
   background: none;

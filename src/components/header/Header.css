@@ -17,6 +17,7 @@
 
 .top-header .logoHeader {
   color: var(--white_color);
+  margin-right: 5px;
 }
 
 .top-header.scrolled {
@@ -180,7 +181,7 @@
 }
 .top-header .container .sign-rigs-icon svg {
   font-size: 21px;
-  fill: var(--main_color);
+  fill: var(--accent);
   cursor: pointer;
 }
 .menu-icon {

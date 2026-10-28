@@ -8,26 +8,3 @@
   max-height: 600px;
   object-fit: cover;
 }
-
-/* @media(max-width: 900px){
-
-  .hero-slider .content h3{
-    font-size: 5vw;
-  }
-  .hero-slider .content p{
-    font-size: 2vw;
-  }
-
-}
-@media(max-width: 480px){
-
-  .hero-slider .content h3{
-    font-size: 7vw;
-    margin-bottom: 7px;
-    line-height: 1.1;
-  }
-  .hero-slider .content p{
-    font-size: 3vw;
-  }
-
-} */

@@ -5,6 +5,7 @@ import { CartContext } from "../../components/context/CartContext";
 // import "../../components/slideProducts/slideProducts.css";
 import { HiTrash } from "react-icons/hi2";
 
+import "../cart/cart.css"
 function FavoritesPage() {
   const { favorites, clearFavorites, removeFavItem } =
     useContext(CartContext);
@@ -13,9 +14,11 @@ function FavoritesPage() {
     <PageTransition>
       <div className="cart">
         <div className="cart-container container">
+          <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #d6d6d6"}}>
           <h2>Favourit Items</h2>
           <div className="removeAll">
             <button onClick={clearFavorites}>Remove All</button>
+          </div>
           </div>
           <div className="cart-items">
             {favorites.length === 0 ? (
